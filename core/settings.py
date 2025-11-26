@@ -128,3 +128,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL='users.User'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://omborxona-production.up.railway.app'
+]
