@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{%block title%} Tahrirlash {%endblock%}
+{%block page%} {{pay_debts.client.name}} {%endblock%}
+
+{%block content%}
+
+
+    <form id="edit-pay_debts-form" method="post">
+    {% csrf_token %}
+
+    <label for="client">Mijoz:</label>
+    <input type="text" name="client" value="{{ pay_debts.client.name }}" id="client" class="form-control" >
+    <br>
+
+    <label for="price">To'lov miqdori:</label>
+    <input type="number" name="price" value="{{ pay_debts.price }}" id="price" class="form-control" >
+    <br>
+
+    <label for="description">Izoh:</label>
+    <input type="text" name="description" value="{{ pay_debts.description }}" id="description" class="form-control">
+    <br>
+
+
+
+          <!-- Modal footer -->
+            <button type="submit" class="btn btn-success">Saqlash</button>
+              <a href="#"><button type="button" class="btn btn-danger" data-dismiss="modal">Yopish</button></a>
+
+      </form>
+{%endblock%}
+

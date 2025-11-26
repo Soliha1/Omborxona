@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%block title %} {{warning_title}}{%endblock%}
+{%block page%} {{warning_title}}{%endblock%}
+
+{%block content%}
+<div class="m-4 p-4 border rounded rounded-4">
+    <p>{{warning_message}}</p>
+    <a href="{%url back_url %}">
+        <button  class="btn btn-secondary">
+            Ortaga qaytish
+        </button>
+    </a>
+</div>
+{%endblock%}

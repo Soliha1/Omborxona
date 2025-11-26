@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{%block title%} Tahrirlash {%endblock%}
+{%block page%} {{sales.product.name}} {%endblock%}
+
+{%block content%}
+
+
+    <form id="edit-product-form" method="post">
+    {% csrf_token %}
+
+    <label for="product">Mahsulot:</label>
+    <input type="text" name="product" value="{{ sales.product.name }}" id="product" class="form-control" required>
+    <br>
+
+    <label for="quantity">Miqdor:</label>
+    <input type="number" name="quantity" value="{{ sales.quantity }}" id="quantity" class="form-control" required>
+    <br>
+
+    <label for="client">Mijoz:</label>
+    <input type="text" name="client" value="{{ sales.client.name }}" id="client" class="form-control">
+    <br>
+
+    <label for="total_price">Jami:</label>
+    <input type="number" name="total_price" value="{{ sales.total_price }}" id="total_price" class="form-control">
+    <br>
+
+    <label for="paid_price">To'landi:</label>
+    <input type="number" name="paid_price" value="{{ sales.paid_price }}" id="paid_price" class="form-control">
+    <br>
+
+    <label for="debt_price">Qarz:</label>
+    <input type="number" name="debt_price" value="{{ sales.debt_price }}" id="debt_price" class="form-control">
+    <br>
+
+
+
+
+          <!-- Modal footer -->
+            <button type="submit" class="btn btn-success">Saqlash</button>
+              <a href="#"><button type="button" class="btn btn-danger" data-dismiss="modal">Yopish</button></a>
+
+      </form>
+{%endblock%}
+

@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block title%} Tahrirlash {%endblock%}
+{%block page%} {{clients.name}} {%endblock%}
+
+{%block content%}
+
+
+          <!-- Modal body -->
+          <form id="edit-product-form"  method="post">
+              {%csrf_token%}
+              <label for="edit-client-name">FIO:</label>
+              <input type="text" name="name" value="{{client.name}}" placeholder="Mijoz to'liq ismi..." id="edit-client-name" class="form-control" required>
+                <br>
+              <label for="edit-client-shop_name">Do'kon nomi:</label>
+              <input type="text" name="shop_name" value="{{client.shop_name}}" placeholder="Do'kon nomi..." id="edit-client-shop_name" class="form-control" required>
+              <br>
+              <label for="edit-product-phone_number">Telefon raqami:</label>
+              <input type="text" name="phone_number" value="{{client.phone_number}}" placeholder="Telefon raqami..." id="edit-product-phone_number" class="form-control" required>
+              <br>
+              <label for="edit-product-address">Manzili:</label>
+              <input type="text" name="address" value="{{client.address}}" placeholder="Mijoz manzili..." id="edit-product-address" class="form-control" required>
+              <br>
+
+          <!-- Modal footer -->
+            <button type="submit" class="btn btn-success">Yangilash</button>
+              <a href="#"><button type="button" class="btn btn-danger" data-dismiss="modal">Yopish</button></a>
+
+      </form>
+{%endblock%}
+
